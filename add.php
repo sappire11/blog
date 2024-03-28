@@ -17,7 +17,7 @@ $result = $conn->query($sql);
     <h1>新增文章</h1>
     <form method="POST" action="handle_add.php">
         <div>標題:<input name="title" /></div>
-        <div>內容:<textarea name="content"></textarea></div>
+        <div>內容:<textarea rows="40" name="content"></textarea></div>
         <div>
             分類: <select name="category_id">
                 <?php
@@ -25,7 +25,7 @@ $result = $conn->query($sql);
                     $id = $row["id"];
                     $name = $row["name"];
 
-                    echo "<option value=''>$name</option>";
+                    echo "<option value='$id'>$name</option>";
                 }
                 ?>
 
