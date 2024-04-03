@@ -1,3 +1,17 @@
+<?php
+require_once('./conn.php');
+$id = $_GET['id'];
+$sql = "SELECT articles.id, articles.title, articles.content, categories.name 
+        FROM articles 
+        LEFT JOIN categories ON articles.category_id = categories.id 
+        WHERE articles.id=" . $id;
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+
+$title = $row['title'];
+$content = $row['content'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,8 +30,9 @@
     </nav>
     <div class="container">
         <div class="single-article">
-            <h1>標題</h1>
-            <p>123456874541</p>
+            <h1><?php echo $title; ?></h1>
+            <h2>分類:<?php echo $row['name']; ?></h2>
+            <p><?php echo $content; ?></p>
         </div>
     </div>
 </body>

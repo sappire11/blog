@@ -1,3 +1,4 @@
+<?php require_once('./conn.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,14 +17,23 @@
     </nav>
     <div class="container">
         <div class="article">
-            <h1><a href="123">標題</a></h1>
+            <?php
+            $sql = "SELECT * FROM articles ORDER BY create_at DESC";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $id = $row['id'];
+                    $title = $row['title'];
+                    echo "<div class='article'>";
+                    echo " <h1><a href='./article.php?id=$id'>$title</a></h1>";
+                    echo "</div>";
+                }
+            }
+            ?>
+
+
 
         </div>
-        <div class="article">
-            <h1><a href="123">標題</a></h1>
-
-        </div>
-    </div>
 </body>
 
 </html>
