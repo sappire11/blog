@@ -1,0 +1,40 @@
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #404092;
+    height: 62px;
+}
+.nav h1{
+    display: inline-block;
+    color: #f7f6f6;
+    margin: 0px 20px ;
+}
+.nav a{
+    padding: 20px;
+    display: inline-block;
+    color: white !important;
+    text-decoration: none;
+
+}
+.nav a.active, .nav a:hover{
+    background-color: #6c6cb0;
+}
+
+.container{
+    margin-top: 80px;
+}
+.article{
+    border: 1px dotted grey;
+}
+.article~.article{
+    margin-top: 20px;
+}
+ .article a{
+    text-decoration: none;
+    color: #000;
+ }
+ .about,.single-article p{
+    white-space: pre-line;
+ }
