@@ -18,9 +18,11 @@
     text-decoration: none;
 
 }
-.nav a.active, .nav a:hover{
+.navbar-nav.me-auto.mb-2.mb-lg-0 .nav-link.active,
+.navbar-nav.me-auto.mb-2.mb-lg-0 .nav-link:hover {
     background-color: #6c6cb0;
 }
+
 
 .container{
     margin-top: 80px;
